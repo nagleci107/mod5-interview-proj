@@ -74,26 +74,30 @@ function movieHTML(movie) {
 
 async function filterMovies(event) {
     function parseReleaseDate(releaseDate) {
-    const [day, month, year] = releaseDate.split(' ');
-    const monthIndex = {
-        Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
-        Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
-    }[month];
-    return new Date(year, monthIndex, day);
+        const [day, month, year] = releaseDate.split(' ');
+        const monthIndex = {
+            Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+            Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+        }[month];
+        return new Date(year, monthIndex, day);
     }
 
 
     if (event === "ALPH_TO_Z") {
     currentMovies.sort((a, b) => a.Title.localeCompare(b.Title));
+    console.log(currentMovies);
   } 
   else if (event === "ALPH_TO_A") {
     currentMovies.sort((a, b) => b.Title.localeCompare(a.Title));
+    console.log(currentMovies);
   }
   else if (event === "NEWEST") {
     currentMovies.sort((a, b) => parseReleaseDate(b.Released) - parseReleaseDate(a.Released));
+    console.log(currentMovies);
   }
   else if (event === "OLDEST") {
     currentMovies.sort((a, b) => parseReleaseDate(a.Released) - parseReleaseDate(b.Released));
+    console.log(currentMovies);
   }
 
   await renderMovies(currentMovies);
