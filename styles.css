@@ -182,18 +182,32 @@ RESULTS
     flex-wrap: wrap;
 
 }
-.movie {
-    width: calc(100%/5);
-    padding: 24px;
+.movies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
     cursor: not-allowed;
+}
+.movie {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 5);
+    padding: 24px;
 }
 .movie:hover .movie__img {
     transform: scale(1.03);
+}
+
+.movie__info {
+    display: flex;
+    flex-direction: column;
 }
 .movie__img--wrapper {
     display: flex;
     margin-bottom: 8px;
     border-radius: 8px;
+    min-height: 200px;
     overflow: hidden;
 }
 .movie__img {
@@ -214,11 +228,13 @@ RESULTS
 .movie__tomatoes {
     font-size: 14px;
 }
-
-.movie__info {
+.movie__details {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
+
+
 
 .movies__loading {
   display: flex;

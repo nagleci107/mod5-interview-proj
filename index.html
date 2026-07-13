@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <script src="https://kit.fontawesome.com/e865365090.js" crossorigin="anonymous"></script>
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
 </head>
 <body>
     <header>
@@ -43,7 +43,7 @@
                     Browse Movies
                 </h2>
                 <div class="search--container">
-                    <input type="text" placeholder="Search by Title" onchange="onSearchChange(event)">
+                    <input id="search-input" type="text" placeholder="Search by Title">
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
             <div class="row">
                 <div class="results__header">
                     <h2>Search Results</h2>
-                    <select name="filter" onchange="filtermovies(event)">
+                    <select name="filter" onchange="filterMovies(event)">
                         <option value="" disabled selected>Sort</option>
                         <option value="ALPH_TO_Z">
                             Alphabetical A to Z</option>
@@ -68,25 +68,31 @@
                 </div>
                 <div class="results">
                     <i class="fas fa-spinner movies__loading--spinner"></i>
-                    <div class="movie">
-                        <figure class="movie__img--wrapper">
-                        <img class="movie__img" src="https://www.themoviedb.org/t/p/w600_and_h900_face/yihdXomYb5kTeSivtFndMy5iDmf.jpg" alt="">
-                        </figure>
-                        <div class="movie__title">
-                            Project Hail Mary
-                        </div>
-                        <div class="movie__released">
-                            Mon DD YYYY
-                        </div>
-                        <div class="movie__info">
-                            <span class="movie__runtime">
-                                107 min
-                            </span>
-                            <span class="movie__tomatoes">
-                                95%
-                            </span>
+                    <div class="movies">
+                            <div class="movie">
+                            <figure class="movie__img--wrapper">
+                            <img class="movie__img" src="https://www.themoviedb.org/t/p/w600_and_h900_face/yihdXomYb5kTeSivtFndMy5iDmf.jpg" alt="">
+                            </figure>
+                            <div class="movie__info">
+                                <div class="movie__title">
+                                Project Hail Mary
+                                </div>
+                                <div class="movie__released">
+                                    Mon DD YYYY
+                                </div>
+                                <div class="movie__details">
+                                    <span class="movie__runtime">
+                                        107 min
+                                    </span>
+                                    <span class="movie__tomatoes">
+                                        95%
+                                    </span>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>        
