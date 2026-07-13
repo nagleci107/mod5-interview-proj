@@ -208,6 +208,7 @@ RESULTS
     margin-bottom: 8px;
     border-radius: 8px;
     min-height: 200px;
+    font-size: 16px;
     overflow: hidden;
 }
 .movie__img {
