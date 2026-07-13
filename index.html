@@ -48,8 +48,40 @@
             </div>
         </div>
     </header>
+    <section class="search--results">
+        <div class="results__header">
+            <h2>Search Results</h2>
+            <select name="filter" onchange="filterBooks(event)">
+                <option value="" disabled selected>Sort</option>
+                <option value="ALPH_TO_Z">
+                    Alphabetical A to Z</option>
+                <option value="ALPH_TO_A">
+                    Alphabetical Z to A</option>
+                <option value="NEWEST">
+                    Newest to Oldest</option>
+                <option value="OLDEST">
+                    Oldest to Newest</option>
+            </select>
+        </div>
+        <div class="results">
+            <i class="fas fa-spinner books__loading--spinner"></i>
+        </div>
+        
+    </section>
     <footer>
-
+        <div class="container">
+      <div class="row row__column">
+        <a href="#">
+          <figure class="footer__logo">
+            <img src="" class="footer__logo--img" alt="">
+          </figure>
+        </a>
+        <div class="footer__list">
+          <a href="#" class="footer__link">Home</a>
+          <a href="#" class="footer__link">Movies</a>
+        </div>
+      </div>
+    </div>
     </footer>
 </body>
 </html>
