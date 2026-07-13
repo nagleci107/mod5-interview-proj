@@ -13,30 +13,33 @@
 
 //   moviesWrapper.classList.remove("movies__loading");
 
-//   if (filter === "LOW_TO_HIGH") {
-//     movies.sort((a, b) => (a.salePrice || a.originalPrice) - (b.salePrice || b.originalPrice));
+//   if (filter === "ALPH_TO_Z") {
+//     movies.sort((a, b) => a.title.localeCompare(b));
+//   } 
+//   else if (filter === "ALPH_TO_A") {
+//     movies.sort((a, b) => b.title.localeCompare(a));
 //   }
-//   else if (filter === "HIGH_TO_LOW") {
-//     movies.sort((a, b) => (b.salePrice || b.originalPrice) - (a.salePrice || a.originalPrice));
+//   else if (filter === "NEWEST") {
+//     movies.sort((a, b) => a.released.getTime() - b.released.getTime());
 //   }
-//   else if (filter === "RATING") {
-//     movies.sort((a, b) => b.rating - a.rating);
+//   else if (filter === "OLDEST") {
+//     movies.sort((a, b) => b.released.getTime() - a.released.getTime());
 //   }
 
  
 
 //   const moviesHtml = movies.map((movie) => {
 //     return `<div class="movie__title">
-            // Title
+            // ${movie.title}
             // </div>
             // <div class="movie__released">
-            //     Aug 06 1998
+            //  ${movie.released}
             // </div>
             // <div class="movie__runtime">
-            //     107 min
+            //   ${movie.runtime}
             // </div>
             // <div class="movie__tomatoes">
-            //     95%
+            //   ${movie.ratings}
             // </div>
 //   </div>`;
 //   })
@@ -45,22 +48,10 @@
 //   moviesWrapper.innerHTML = moviesHtml
 // }
 
-// function ratingsHTML(rating) {
-//    let ratingHTML = "";
-//   for (let i = 0; i < Math.floor(rating); ++i) {
-//     ratingHTML += '<i class="fas fa-star"></i>\n'
-//   }
-//   if (!Number.isInteger(rating)) {
-//     ratingHTML += '<i class="fas fa-star-half-stroke"></i>\n'
-//   }
-//   return ratingHTML;
-// }
+// function filterRatings() {
+//     const allSources = ["Internet Movie Database", "Rotten Tomatoes", "Metacritic"]
+//     const targetSource = "RottenTomatoes"
 
-// function priceHTML(originalPrice, salePrice) {
-//   if (!salePrice) {
-//     return `$${originalPrice.toFixed(2)}`
-//   }
-//   return `<span class="movie__price--normal">$${originalPrice.toFixed(2)}</span> $${salePrice.toFixed(2)}`
 // }
 
 // function filterMovies(event) {
