@@ -1,0 +1,275 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* General */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    color: #ac7d37;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    background-color: #242424;
+}
+
+p {
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: inherit;
+}
+
+input, select, option {
+    color: #242424;
+}
+
+.no-cursor {
+    cursor: not-allowed;
+}
+
+/*
+NAV
+*/
+
+nav {
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
+}
+
+.nav__container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 160px;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+}
+
+.nav__links {
+    justify-content: space-between;
+}
+
+.nav__link {
+    margin-left: 16px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px;
+}
+
+
+/* 
+
+HEADER 
+
+*/
+
+header {
+    height: calc(25vh - 80px);
+    align-items: center;
+    justify-content: center;
+}
+
+header .container {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+    padding-top: 24px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+header .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.search--container {
+    display: flex;
+    background-color: whitesmoke;
+    border-radius: 99px;
+    padding: 1rem 2rem;
+    max-width: 500px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+input {
+    border: none;
+    outline: none;
+    width: 90%;
+    height: 100%;
+    background-color: transparent;
+    font-size: 16px;
+}
+input:active {
+    border: none;
+    outline: none;
+}
+
+
+/* 
+
+RESULTS 
+
+*/
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 56px;
+}
+
+.row {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.results__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+
+/* movies */
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.movie {
+    width: calc(100%/5);
+    padding: 24px;
+    cursor: not-allowed;
+}
+.movie:hover .movie__img {
+    transform: scale(1.03);
+}
+.movie__img--wrapper {
+    display: flex;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.movie__img {
+    max-height: 300px;
+    width: 100%;
+    transition: all 300ms ease;
+
+}
+.movie__title {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+.movie__title:hover {
+    text-decoration: underline;
+}
+.movie__released,
+.movie__runtime,
+.movie__tomatoes {
+    font-size: 14px;
+}
+
+.movie__info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.movies__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  font-size: 60px;
+}
+
+/* loading state */
+.movies__loading--spinner {
+    display: none !important;
+}
+
+.movies__loading .movies__loading--spinner {
+    display: block !important;
+}
+
+.fa-spinner {
+  animation: rotate 600ms infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* 
+
+FOOTER 
+
+*/
+.row__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer__logo--wrapper {
+    margin-bottom: 1rem;
+}
+
+.footer__list {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
