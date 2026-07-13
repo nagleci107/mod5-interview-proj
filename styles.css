@@ -179,11 +179,6 @@ RESULTS
 
 .movies {
     display: flex;
-    flex-wrap: wrap;
-
-}
-.movies {
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
