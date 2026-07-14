@@ -2,6 +2,7 @@
 // key: 1d08b643
 
 const movieListEl = document.querySelector(".movies");
+const resultsEl = document.querySelector(".results")
 
 const t = localStorage.getItem("title");
 
@@ -18,21 +19,26 @@ async function getMovies(t) {
     if (moviesData.Response === "True") {
             currentMovies = moviesData.Search; // Store the current movie results
             await renderMovies(currentMovies);
-        } else {
-            movieListEl.classList.remove("movies__loading");
+        } 
+        else if (t === "") {
+            resultsEl.classList.remove("movies__loading");
+            movieListEl.innerHTML = `<div>Start your search.</div>`;
+            return;
+        }
+        else {
+            resultsEl.classList.remove("movies__loading");
             movieListEl.innerHTML = `<div>No results found for "${t}"</div>`;
         }
 }
 
 async function renderMovies(movies) {
 
-    console.log("loading started")
-    movieListEl.classList.add("movies__loading");
+    resultsEl.classList.add("movies__loading");
 
     if (!currentMovies) {
         currentMovies = await getMovies();
     };
-
+    
     movieListEl.innerHTML = ""; // Clear previous results
 
     const movieDetailsPromises = movies.map(async (movie) => {
@@ -44,10 +50,7 @@ async function renderMovies(movies) {
         movieListEl.innerHTML += movieHTML(movie);
     });
 
-    setTimeout(() => {
-    movieListEl.classList.remove(".movies__loading");
-    console.log("loading ended")
-    }, 100);
+    resultsEl.classList.remove("movies__loading");
     
 }
 
@@ -129,7 +132,7 @@ searchInput.addEventListener("keydown", async (event) => {
 });
 
 
-movieListEl.classList.add("movies__loading");
+resultsEl.classList.add("movies__loading");
 setTimeout(() => {
     const initialTitle = localStorage.getItem("title") || "";
     getMovies(initialTitle);

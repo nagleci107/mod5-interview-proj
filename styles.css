@@ -183,6 +183,9 @@ RESULTS
     margin-bottom: 2rem;
 }
 
+.results {
+    width: 100%;
+}
 
 /* movies */
 
@@ -241,6 +244,7 @@ RESULTS
 /* loading state */
 .movies__loading {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding-top: 60px;
