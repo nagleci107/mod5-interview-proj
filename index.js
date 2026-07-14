@@ -13,7 +13,7 @@ let currentMovies = [];
 
 async function getMovies(t) {
 
-    const movies = await fetch(`http://www.omdbapi.com/?s=${t}&apikey=1d08b643`);
+    const movies = await fetch(`https://www.omdbapi.com/?s=${t}&apikey=1d08b643`);
     const moviesData = await movies.json();
     
     if (moviesData.Response === "True") {
@@ -42,7 +42,7 @@ async function renderMovies(movies) {
     movieListEl.innerHTML = ""; // Clear previous results
 
     const movieDetailsPromises = movies.map(async (movie) => {
-        const detailResponse = await fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=1d08b643`);
+        const detailResponse = await fetch(`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=1d08b643`);
         return await detailResponse.json();
     });
         const detailedMovies = await Promise.all(movieDetailsPromises);
@@ -84,7 +84,7 @@ function movieHTML(movie) {
 async function filterMovies(event) {
     const filter = event.target.value;
     const movieDetailsPromises = currentMovies.map(async (movie) => {
-        const detailResponse = await fetch(`http://www.omdbapi.com/?i=${movie.imdbID}&apikey=1d08b643`);
+        const detailResponse = await fetch(`https://www.omdbapi.com/?i=${movie.imdbID}&apikey=1d08b643`);
         return await detailResponse.json();
     }); // for the release date data
 
