@@ -53,7 +53,9 @@ nav {
     height: 80px;
     justify-content: space-between;
     align-items: center;
-    margin: 0 2rem;
+    padding: 0 2rem;
+    background-color: #111111;
+    box-shadow: 1px 1px 20px rgb(0, 0, 0, 0.9);
 }
 
 .nav__container {
@@ -100,6 +102,8 @@ header {
     height: calc(25vh - 80px);
     align-items: center;
     justify-content: center;
+    background-color: #292929;
+    box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.5);
 }
 
 header .container {
@@ -134,6 +138,7 @@ header h2 {
     width: 100%;
     align-items: center;
     justify-content: center;
+    margin-bottom: 4rem;
 }
 input {
     border: none;
@@ -155,6 +160,9 @@ RESULTS
 
 */
 
+.search--results {
+    height: 60vh;
+}
 .container {
     display: flex;
     justify-content: center;
@@ -269,6 +277,12 @@ RESULTS
 FOOTER 
 
 */
+
+footer {
+    background-color: #111111;
+    height: 100%;
+    min-height: 280px;
+}
 .row__column {
     display: flex;
     flex-direction: column;
